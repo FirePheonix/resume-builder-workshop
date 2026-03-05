@@ -528,7 +528,10 @@ export default function Component10HeroSection() {
         </div>
 
         {/* Github button */}
-        <button
+        <a
+          href="https://github.com/FirePheonix/resume-builder-workshop"
+          target="_blank"
+          rel="noopener noreferrer"
           className="login-btn"
           style={{
             backgroundColor: "#2b2f33",
@@ -542,12 +545,14 @@ export default function Component10HeroSection() {
             flexShrink: 0,
             boxShadow: "inset 0 4px 5px rgba(0,0,0,0.1)",
             transition: "background-color 0.15s",
+            textDecoration: "none",
+            display: "inline-block",
           }}
           onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#1e2226")}
           onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#2b2f33")}
         >
           Github
-        </button>
+        </a>
 
         {/* Hamburger — shown on mobile via CSS class */}
         <button
@@ -686,7 +691,10 @@ export default function Component10HeroSection() {
         >
           Engineered to help students build professional resumes, highlight their projects, and stand out to recruiters and internship opportunities.
         </p>
-        <button
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdwRRwpUuXy666G8xdwdUHn_jJesADoZVKDd5yWdmnBYqjMUQ/viewform?usp=dialog"
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
             marginTop: 32,
             backgroundColor: "#2b2f33",
@@ -702,6 +710,7 @@ export default function Component10HeroSection() {
             cursor: "pointer",
             boxShadow: "inset 0 -4px 20px rgba(0,0,0,0.1), inset 0 4px 20px rgba(0,0,0,0.1)",
             transition: "background-color 0.15s",
+            textDecoration: "none",
           }}
           onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#1e2226")}
           onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#2b2f33")}
@@ -716,7 +725,7 @@ export default function Component10HeroSection() {
               strokeWidth="1.5"
             />
           </svg>
-        </button>
+        </a>
       </section>
 
       {/* ── CARDS GRID ───────────────────────────────────────────────────────── */}
