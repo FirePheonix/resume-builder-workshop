@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls e:/Algozenith-Resume-Proj/*.json)",
+      "Bash(npx tsc --noEmit)"
+    ]
+  }
+}
