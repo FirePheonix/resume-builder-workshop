@@ -5,11 +5,15 @@ import iconSvg2 from "../assets/svg2.svg";
 import iconSvg3 from "../assets/svg3.svg";
 import imgCtaImage from "../assets/CTA-IMAGE.png";
 import imgProfile from "../assets/profile.jpg";
+import imgSummerOfCode from "../assets/summer_of_code_logo.png";
+import imgWorldQuant from "../assets/worldquant_logo.png";
+import imgDualite from "../assets/dualite_logo.png";
 import imgAlgozenithLogo from "../assets/algozenith-logo.svg";
 import iconGithub from "../assets/github.svg";
 import iconLinkedin from "../assets/linkedin.svg";
 import iconGmail from "../assets/gmail.svg";
 import imgTechSociLogo from "../assets/TechSoci-logo.svg";
+import imgGdgLogo from "../assets/gdg_ait_pune_logo.svg";
 import imgFrame from "figma:asset/82c4cb5926612e45a942d2f628f6759359c3a158.png";
 import imgImage from "figma:asset/5f010b637e91c7aef3621918a9cacf6579c4e805.png";
 import imgFrame1 from "figma:asset/e577b92be2ca59ea233ba432fd855acf9283e325.png";
@@ -451,6 +455,97 @@ function AutomationCard() {
   );
 }
 
+// ─── FAQ Item ─────────────────────────────────────────────────────────────────
+
+function FaqItem({ question, answer }: { question: string; answer: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div
+      style={{
+        background: open ? "#ffffff" : "#fafafa",
+        border: `1px solid ${open ? "#e0e0e0" : "#ebebeb"}`,
+        borderRadius: 14,
+        overflow: "hidden",
+        transition: "background 0.2s, border-color 0.2s",
+      }}
+    >
+      <button
+        onClick={() => setOpen(!open)}
+        style={{
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          background: "none",
+          border: "none",
+          padding: "20px 24px",
+          cursor: "pointer",
+          textAlign: "left",
+          gap: 16,
+        }}
+      >
+        <span
+          style={{
+            fontFamily: "'Neue Montreal', sans-serif",
+            fontSize: 16,
+            fontWeight: 600,
+            color: open ? "#000" : "#2b2f33",
+            lineHeight: 1.35,
+            transition: "color 0.2s",
+          }}
+        >
+          {question}
+        </span>
+        <span
+          style={{
+            flexShrink: 0,
+            width: 28,
+            height: 28,
+            borderRadius: "50%",
+            background: open ? "#2b2f33" : "#ececec",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            transition: "background 0.25s, transform 0.25s",
+            transform: open ? "rotate(45deg)" : "rotate(0deg)",
+          }}
+        >
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+            <path
+              d="M5 1v8M1 5h8"
+              stroke={open ? "#fff" : "#555"}
+              strokeWidth="1.6"
+              strokeLinecap="round"
+            />
+          </svg>
+        </span>
+      </button>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateRows: open ? "1fr" : "0fr",
+          transition: "grid-template-rows 0.3s ease",
+        }}
+      >
+        <div style={{ overflow: "hidden" }}>
+          <p
+            style={{
+              margin: 0,
+              padding: "0 24px 20px",
+              fontFamily: "'Inter Tight', sans-serif",
+              fontSize: 15,
+              color: "#555",
+              lineHeight: 1.65,
+            }}
+          >
+            {answer}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ─── MAIN EXPORT ──────────────────────────────────────────────────────────────
 
 const NAV_LINKS = ["Features", "How it works", "Pricing", "FAQ"];
@@ -815,7 +910,7 @@ export default function Component10HeroSection() {
         >
           Powered By
         </p>
-        <div style={{ display: "flex", alignItems: "center", gap: 40, justifyContent: "center" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 24, justifyContent: "center" }}>
           <img
             src={imgAlgozenithLogo}
             alt="AlgoZenith"
@@ -824,6 +919,11 @@ export default function Component10HeroSection() {
           <img
             src={imgTechSociLogo}
             alt="TechSoci"
+            style={{ width: "22%", height: "auto", filter: "grayscale(1) opacity(0.45)", objectFit: "contain" }}
+          />
+          <img
+            src={imgGdgLogo}
+            alt="GDG AIT Pune"
             style={{ width: "22%", height: "auto", filter: "grayscale(1) opacity(0.45)", objectFit: "contain" }}
           />
         </div>
@@ -862,7 +962,7 @@ export default function Component10HeroSection() {
       >
         <h2
           style={{
-            margin: "0 0 24px",
+            margin: "0 0 32px",
             fontSize: 13,
             fontWeight: 600,
             letterSpacing: "0.12em",
@@ -878,98 +978,84 @@ export default function Component10HeroSection() {
         <div
           style={{
             background: "#ffffff",
-            borderRadius: 20,
+            borderRadius: 24,
             overflow: "hidden",
-            boxShadow: "0 2px 24px 0 rgba(0,0,0,0.07)",
-            maxWidth: 480,
+            boxShadow: "0 2px 40px 0 rgba(0,0,0,0.08)",
+            maxWidth: 960,
             margin: "0 auto",
           }}
         >
           {/* Banner */}
           <div
             style={{
-              height: 90,
+              height: 160,
               background: "linear-gradient(120deg, #f0f0f0 0%, #e4e4e4 100%)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              padding: "0 24px",
+              padding: "0 48px",
             }}
           >
-            <span style={{ fontWeight: 800, fontSize: 22, color: "#2b2f33", letterSpacing: "-0.5px" }}>
+            <span style={{ fontWeight: 800, fontSize: 32, color: "#2b2f33", letterSpacing: "-0.5px" }}>
               Workshop <span style={{ color: "#6c63ff" }}>2026</span>
             </span>
           </div>
 
           {/* Body */}
-          <div style={{ padding: "0 24px 28px", position: "relative" }}>
-            {/* Avatar */}
-            <img
-              src={imgProfile}
-              alt="Speaker"
-              style={{
-                width: 72,
-                height: 72,
-                borderRadius: "50%",
-                objectFit: "cover",
-                border: "3px solid #ffffff",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
-                marginTop: -36,
-                display: "block",
-              }}
-            />
-
-            {/* Name row */}
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 12 }}>
-              <h3 style={{ margin: 0, fontSize: 22, fontWeight: 700, color: "#1a1a1a" }}>Shubham Singh</h3>
-              <button
+          <div style={{ padding: "0 48px 48px", position: "relative" }}>
+            {/* Top row: avatar + name + register */}
+            <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 0 }}>
+              <img
+                src={imgProfile}
+                alt="Speaker"
+                style={{
+                  width: 120,
+                  height: 120,
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  border: "4px solid #ffffff",
+                  boxShadow: "0 2px 16px rgba(0,0,0,0.14)",
+                  marginTop: -60,
+                  display: "block",
+                  flexShrink: 0,
+                }}
+              />
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdwRRwpUuXy666G8xdwdUHn_jJesADoZVKDd5yWdmnBYqjMUQ/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   background: "#2b2f33",
                   color: "#fff",
                   border: "none",
-                  borderRadius: 8,
-                  padding: "8px 20px",
-                  fontSize: 13,
+                  borderRadius: 10,
+                  padding: "12px 32px",
+                  fontSize: 16,
                   fontWeight: 600,
                   cursor: "pointer",
+                  textDecoration: "none",
+                  display: "inline-block",
+                  marginBottom: 4,
+                  position: "relative",
+                  zIndex: 10,
                 }}
+                onMouseEnter={(e) => (e.currentTarget.style.background = "#1e2226")}
+                onMouseLeave={(e) => (e.currentTarget.style.background = "#2b2f33")}
               >
                 Register
-              </button>
+              </a>
             </div>
 
-            {/* Tagline */}
-            <p style={{ margin: "6px 0 14px", fontSize: 13, color: "#888" }}>
-              Founder &nbsp;·&nbsp; Researcher &nbsp;·&nbsp; Open Source Contributtor
+            {/* Name + tagline */}
+            <h3 style={{ margin: "20px 0 4px", fontSize: 34, fontWeight: 700, color: "#1a1a1a", letterSpacing: "-0.5px" }}>
+              Shubham Singh
+            </h3>
+            <p style={{ margin: "0 0 8px", fontSize: 16, color: "#888" }}>
+              Founder &nbsp;·&nbsp; Researcher &nbsp;·&nbsp; Open Source Contributor
             </p>
 
-            {/* Highlights */}
-            <ul
-              style={{
-                margin: "0 0 20px",
-                padding: 0,
-                listStyle: "none",
-                display: "flex",
-                flexDirection: "column",
-                gap: 7,
-              }}
-            >
-              {[
-                "Google Summer of Code '25 — Sugar Labs",
-                "Research Consultant — WorldQuant",
-                "Founder/Builder — Gemnar",
-                "4× Hackathon Winner",
-                "Former Developer — dualite.dev",
-              ].map((item) => (
-                <li key={item} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 13.5, color: "#444" }}>
-                  <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#6c63ff", flexShrink: 0 }} />
-                  {item}
-                </li>
-              ))}
-            </ul>
-
             {/* Social links */}
-            <div style={{ display: "flex", gap: 12 }}>
+            <div style={{ display: "flex", gap: 10, marginBottom: 32 }}>
               {[
                 { icon: iconGithub, href: "https://github.com/FirePheonix", label: "GitHub" },
                 { icon: iconLinkedin, href: "https://www.linkedin.com/in/shubham-singh-8a5643198/", label: "LinkedIn" },
@@ -985,8 +1071,8 @@ export default function Component10HeroSection() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    width: 36,
-                    height: 36,
+                    width: 38,
+                    height: 38,
                     borderRadius: 8,
                     background: "#f4f4f5",
                     border: "1px solid #e4e4e7",
@@ -1000,7 +1086,127 @@ export default function Component10HeroSection() {
                 </a>
               ))}
             </div>
+
+            {/* Logo row */}
+            <div style={{ display: "flex", alignItems: "center", gap: 20, marginBottom: 28 }}>
+              {[
+                { src: imgSummerOfCode, alt: "Google Summer of Code" },
+                { src: imgWorldQuant, alt: "WorldQuant" },
+                { src: imgDualite, alt: "Dualite" },
+              ].map(({ src, alt }) => (
+                <img
+                  key={alt}
+                  src={src}
+                  alt={alt}
+                  style={{ height: 64, width: "auto", objectFit: "contain", opacity: 0.85 }}
+                />
+              ))}
+            </div>
+
+            {/* Divider */}
+            <div style={{ height: 1, background: "#f0f0f0", marginBottom: 24 }} />
+
+            {/* Bio paragraphs */}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 12,
+                fontSize: 15,
+                color: "#555",
+                lineHeight: 1.6,
+                fontFamily: "'Inter Tight', sans-serif",
+              }}
+            >
+              <p style={{ margin: 0 }}>
+                Hi, I'm Shubham, a developer who enjoys building things, contributing to open source, and experimenting with new ideas in tech.
+              </p>
+              <p style={{ margin: 0 }}>
+                I was selected as a <strong style={{ color: "#333" }}>Google Summer of Code 2025</strong> contributor with Sugar Labs, where I worked with a global open-source team and collaborated on developing projects for their platform. I am currently a maintainer of a Sugar Labs repo and an active open source contributor.
+              </p>
+              <p style={{ margin: 0 }}>
+                Alongside open source, I currently work as a <strong style={{ color: "#333" }}>Quant Research Consultant at WorldQuant</strong>, exploring the intersection of data, mathematics, and financial research.
+              </p>
+              <p style={{ margin: 0 }}>
+                I also enjoy building products. Recently I've been working on <strong style={{ color: "#333" }}>Gemnar</strong>, an AI workflow platform that lets creators automate content generation and distribution using multiple AI models through visual pipelines.
+              </p>
+              <p style={{ margin: 0 }}>
+                Over time I've participated in several hackathons and placed in a few, including <strong style={{ color: "#333" }}>Infosys CAI Hackathon</strong>, <strong style={{ color: "#333" }}>HackOrbit</strong>, and <strong style={{ color: "#333" }}>Hackzilla</strong>. Outside of coding, I've had the opportunity to speak with developer communities, including a session at <strong style={{ color: "#333" }}>IIT Madras</strong>.
+              </p>
+              <p style={{ margin: 0 }}>
+                I've also worked with startups, including <strong style={{ color: "#333" }}>Dualite</strong>, an AI website-building platform in the Figma-to-code space, where I gained exposure to building real products in fast-paced environments.
+              </p>
+
+              {/* Divider */}
+              <div style={{ height: 1, background: "#f0f0f0", margin: "4px 0" }} />
+
+              <p style={{ margin: 0, color: "#6c63ff", fontWeight: 600, fontSize: 14 }}>
+                In this session, I'll be sharing practical ideas on how to build and present a resume that actually stands out — based on my own experiences with open source, hackathons, and internships.
+              </p>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ─────────────────────────────────────────────────────────────── */}
+      <section
+        id="faq"
+        style={{
+          width: "80%",
+          maxWidth: 760,
+          margin: "0 auto",
+          paddingBottom: 100,
+          boxSizing: "border-box",
+        }}
+      >
+        <h2
+          style={{
+            margin: "0 0 8px",
+            fontSize: 13,
+            fontWeight: 600,
+            letterSpacing: "0.12em",
+            textTransform: "uppercase",
+            color: "#aaaaaa",
+            textAlign: "center",
+          }}
+        >
+          FAQ
+        </h2>
+        <p
+          style={{
+            margin: "0 0 36px",
+            textAlign: "center",
+            fontFamily: "'Neue Montreal', sans-serif",
+            fontSize: 28,
+            fontWeight: 700,
+            color: "#1a1a1a",
+            letterSpacing: "-0.4px",
+          }}
+        >
+          Got questions? We've got answers.
+        </p>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          {[
+            {
+              q: "Is this an online live session?",
+              a: "Yes — this is a fully online, live interactive session. You'll be able to ask questions in real time and engage directly with the speaker.",
+            },
+            {
+              q: "Will resources and recordings be shared?",
+              a: "Absolutely. All registered attendees will receive the session recording, slide deck, and any additional resources shared during the workshop — so you won't miss a thing even if you can't make it live.",
+            },
+            {
+              q: "When exactly is the session?",
+              a: "The exact date and time will be emailed to you shortly after registration. The session is planned for the evening, so it should be convenient for most students.",
+            },
+            {
+              q: "What kind of projects will be covered?",
+              a: "The session will focus on industry-relevant projects — the kind that actually get noticed by recruiters. These are real-world project ideas sourced in collaboration with industry professionals, covering domains like open source, AI/ML, and full-stack development.",
+            },
+          ].map(({ q, a }, i) => (
+            <FaqItem key={i} question={q} answer={a} />
+          ))}
         </div>
       </section>
 
