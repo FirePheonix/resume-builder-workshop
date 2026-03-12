@@ -14,6 +14,7 @@ import iconLinkedin from "../assets/linkedin.svg";
 import iconGmail from "../assets/gmail.svg";
 import imgTechSociLogo from "../assets/TechSoci-logo.svg";
 import imgGdgLogo from "../assets/gdg_ait_pune_logo.svg";
+import imgAtcBennet from "../assets/atc_bennet_university.svg";
 import imgFrame from "figma:asset/82c4cb5926612e45a942d2f628f6759359c3a158.png";
 import imgImage from "figma:asset/5f010b637e91c7aef3621918a9cacf6579c4e805.png";
 import imgFrame1 from "figma:asset/e577b92be2ca59ea233ba432fd855acf9283e325.png";
@@ -548,7 +549,16 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
 
 // ─── MAIN EXPORT ──────────────────────────────────────────────────────────────
 
-const NAV_LINKS = ["Features", "How it works", "Pricing", "FAQ"];
+const NAV_LINKS: { label: string; id: string }[] = [
+  { label: "Powered By", id: "powered-by" },
+  { label: "Featured", id: "featured" },
+  { label: "Speaker", id: "speaker" },
+  { label: "FAQs", id: "faq" },
+];
+
+function scrollTo(id: string) {
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
 export default function Component10HeroSection() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -561,6 +571,7 @@ export default function Component10HeroSection() {
         minHeight: "100vh",
         position: "relative",
         overflowX: "hidden",
+        scrollBehavior: "smooth",
       }}
     >
       <BgLines />
@@ -602,10 +613,11 @@ export default function Component10HeroSection() {
             gap: 36,
           }}
         >
-          {NAV_LINKS.map((label) => (
+          {NAV_LINKS.map(({ label, id }) => (
             <a
-              key={label}
-              href={`#${label.toLowerCase().replace(/ /g, "-")}`}
+              key={id}
+              href={`#${id}`}
+              onClick={(e) => { e.preventDefault(); scrollTo(id); }}
               style={{
                 fontFamily: "'Neue Montreal', sans-serif",
                 fontSize: 16,
@@ -713,11 +725,11 @@ export default function Component10HeroSection() {
             display: "flex",
           }}
         >
-          {NAV_LINKS.map((label) => (
+          {NAV_LINKS.map(({ label, id }) => (
             <a
-              key={label}
-              href={`#${label.toLowerCase().replace(/ /g, "-")}`}
-              onClick={() => setMenuOpen(false)}
+              key={id}
+              href={`#${id}`}
+              onClick={(e) => { e.preventDefault(); setMenuOpen(false); scrollTo(id); }}
               style={{
                 fontFamily: "'Neue Montreal', sans-serif",
                 fontSize: 16,
@@ -887,6 +899,7 @@ export default function Component10HeroSection() {
 
       {/* ── POWERED BY ──────────────────────────────────────────────────────── */}
       <section
+        id="powered-by"
         style={{
           display: "flex",
           flexDirection: "column",
@@ -927,10 +940,18 @@ export default function Component10HeroSection() {
             style={{ width: "22%", height: "auto", filter: "grayscale(1) opacity(0.45)", objectFit: "contain" }}
           />
         </div>
+        <div style={{ display: "flex", justifyContent: "center", marginTop: 20 }}>
+          <img
+            src={imgAtcBennet}
+            alt="ATC Bennet University"
+            style={{ width: "66%", height: "auto", filter: "grayscale(1) opacity(0.45)", objectFit: "contain" }}
+          />
+        </div>
       </section>
 
       {/* ── CTA IMAGE ────────────────────────────────────────────────────────── */}
       <section
+        id="featured"
         className="cta-image-section"
         style={{
           position: "relative",
@@ -953,6 +974,7 @@ export default function Component10HeroSection() {
 
       {/* ── KNOW YOUR SPEAKER ────────────────────────────────────────────────── */}
       <section
+        id="speaker"
         style={{
           width: "80%",
           margin: "0 auto",
@@ -1212,6 +1234,8 @@ export default function Component10HeroSection() {
 
       {/* ── RESPONSIVE STYLES ────────────────────────────────────────────────── */}
       <style>{`
+        html, body { scroll-behavior: smooth; }
+
         /* tablet — 2-col, full width */
         @media (max-width: 1024px) {
           .cards-grid {
