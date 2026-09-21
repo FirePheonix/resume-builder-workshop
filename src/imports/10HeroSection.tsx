@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useToast } from "../components/ui/use-toast";
 import svgPaths from "./svg-2v4llaxhqm";
 import iconSvg1 from "../assets/svg1.svg";
 import iconSvg2 from "../assets/svg2.svg";
@@ -550,6 +551,7 @@ function scrollTo(id: string) {
 
 export default function Component10HeroSection() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { toast } = useToast();
 
   return (
     <div
@@ -792,10 +794,9 @@ export default function Component10HeroSection() {
         >
           First ever open book codathon for IIIT Sonepat students. Bring any non-printed, handwritten notes you want. Test will be set of questions derived right from the list of questions given to you.
         </p>
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSdwRRwpUuXy666G8xdwdUHn_jJesADoZVKDd5yWdmnBYqjMUQ/viewform?usp=dialog"
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          type="button"
+          onClick={() => toast({ title: "Coming soon" })}
           style={{
             marginTop: 32,
             backgroundColor: "#2b2f33",
@@ -811,7 +812,6 @@ export default function Component10HeroSection() {
             cursor: "pointer",
             boxShadow: "inset 0 -4px 20px rgba(0,0,0,0.1), inset 0 4px 20px rgba(0,0,0,0.1)",
             transition: "background-color 0.15s",
-            textDecoration: "none",
           }}
           onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#1e2226")}
           onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#2b2f33")}
@@ -826,7 +826,7 @@ export default function Component10HeroSection() {
               strokeWidth="1.5"
             />
           </svg>
-        </a>
+        </button>
       </section>
 
       {/* ── CARDS GRID ───────────────────────────────────────────────────────── */}
