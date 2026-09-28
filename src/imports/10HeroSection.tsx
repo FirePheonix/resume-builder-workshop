@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useToast } from "../components/ui/use-toast";
 import svgPaths from "./svg-2v4llaxhqm";
 import iconSvg1 from "../assets/svg1.svg";
@@ -552,6 +553,7 @@ function scrollTo(id: string) {
 export default function Component10HeroSection() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   return (
     <div
@@ -591,7 +593,7 @@ export default function Component10HeroSection() {
             flexShrink: 0,
           }}
         >
-          Codezilla
+          Codezilla 3.0
         </p>
 
         {/* Desktop nav links */}
@@ -796,7 +798,7 @@ export default function Component10HeroSection() {
         </p>
         <button
           type="button"
-          onClick={() => toast({ title: "Coming soon" })}
+          onClick={() => navigate("/register")}
           style={{
             marginTop: 32,
             backgroundColor: "#2b2f33",
