@@ -1,0 +1,1417 @@
+[
+  {
+    "name": "Brimstone",
+    "slug": "brimstone",
+    "role": "Controller",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/4ee40330-ecdd-4f2f-98a8-eb1243428373/displayicon.png",
+    "description": "Joining from the U.S.A., Brimstone's orbital arsenal ensures his squad always has the advantage. His ability to deliver utility precisely and safely make him the unmatched boots-on-the-ground commander.",
+    "icon": "https://media.valorant-api.com/agents/9f0d8ba9-4140-b941-57d3-a7ad57c6b417/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/9f0d8ba9-4140-b941-57d3-a7ad57c6b417/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/9f0d8ba9-4140-b941-57d3-a7ad57c6b417/background.png",
+    "colors": [
+      "#363c4f",
+      "#211d21"
+    ],
+    "abilities": [
+      {
+        "slot": "Grenade",
+        "name": "Stim Beacon",
+        "icon": "https://media.valorant-api.com/agents/9f0d8ba9-4140-b941-57d3-a7ad57c6b417/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ability1",
+        "name": "Incendiary",
+        "icon": "https://media.valorant-api.com/agents/9f0d8ba9-4140-b941-57d3-a7ad57c6b417/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Sky Smoke",
+        "icon": "https://media.valorant-api.com/agents/9f0d8ba9-4140-b941-57d3-a7ad57c6b417/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Orbital Strike",
+        "icon": "https://media.valorant-api.com/agents/9f0d8ba9-4140-b941-57d3-a7ad57c6b417/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/brimstonebarrierdown4.mp3",
+        "text": "This ain't what they signed up for.",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/brimstoneclutch2.mp3",
+        "text": "That's why they put me in charge.",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/brimstoneace2.mp3",
+        "text": "I'm king of this hill!",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Phoenix",
+    "slug": "phoenix",
+    "role": "Duelist",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/dbe8757e-9e92-4ed4-b39f-9dfc589691d4/displayicon.png",
+    "description": "Hailing from the U.K., Phoenix's star power shines through in his fighting style, igniting the battlefield with flash and flare. Whether he's got backup or not, he's rushing in to fight on his own terms.",
+    "icon": "https://media.valorant-api.com/agents/eb93336a-449b-9c1b-0a54-a891f7921d69/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/eb93336a-449b-9c1b-0a54-a891f7921d69/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/eb93336a-449b-9c1b-0a54-a891f7921d69/background.png",
+    "colors": [
+      "#74321c",
+      "#262423"
+    ],
+    "abilities": [
+      {
+        "slot": "Grenade",
+        "name": "Blaze",
+        "icon": "https://media.valorant-api.com/agents/eb93336a-449b-9c1b-0a54-a891f7921d69/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ability1",
+        "name": "Hot Hands",
+        "icon": "https://media.valorant-api.com/agents/eb93336a-449b-9c1b-0a54-a891f7921d69/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Curveball",
+        "icon": "https://media.valorant-api.com/agents/eb93336a-449b-9c1b-0a54-a891f7921d69/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Run it Back",
+        "icon": "https://media.valorant-api.com/agents/eb93336a-449b-9c1b-0a54-a891f7921d69/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/phoenixbarrierdown6.mp3",
+        "text": "They're not gonna get an inch!",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/phoenixclutch2.mp3",
+        "text": "Oh you thought you'd put up a fight?",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/phoenixace1.mp3",
+        "text": "Mess with again? Oh wait, you can't!",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Sage",
+    "slug": "sage",
+    "role": "Sentinel",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/5fc02f99-4091-4486-a531-98459a3e95e9/displayicon.png",
+    "description": "The bastion of China, Sage creates safety for herself and her team wherever she goes. Able to revive fallen friends and stave off forceful assaults, she provides a calm center to a hellish battlefield.",
+    "icon": "https://media.valorant-api.com/agents/569fdd95-4d10-43ab-ca70-79becc718b46/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/569fdd95-4d10-43ab-ca70-79becc718b46/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/569fdd95-4d10-43ab-ca70-79becc718b46/background.png",
+    "colors": [
+      "#1f5148",
+      "#102d23"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Slow Orb",
+        "icon": "https://media.valorant-api.com/agents/569fdd95-4d10-43ab-ca70-79becc718b46/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Healing Orb",
+        "icon": "https://media.valorant-api.com/agents/569fdd95-4d10-43ab-ca70-79becc718b46/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Barrier Orb",
+        "icon": "https://media.valorant-api.com/agents/569fdd95-4d10-43ab-ca70-79becc718b46/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Resurrection",
+        "icon": "https://media.valorant-api.com/agents/569fdd95-4d10-43ab-ca70-79becc718b46/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/sagebarrierdown20.mp3",
+        "text": "Stanch the bleeding. Fight back!",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/sageclutch2.mp3",
+        "text": "This is what I trained for!",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/sageace2.mp3",
+        "text": "Today, I was the sword!",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Sova",
+    "slug": "sova",
+    "role": "Initiator",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/1b47567f-8f7b-444b-aae3-b0c634622d10/displayicon.png",
+    "description": "Born from the eternal winter of Russia's tundra, Sova tracks, finds, and eliminates enemies with ruthless efficiency and precision. His custom bow and incredible scouting abilities ensure that even if you run, you cannot hide. ",
+    "icon": "https://media.valorant-api.com/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/background.png",
+    "colors": [
+      "#355285",
+      "#101c47"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Shock Bolt",
+        "icon": "https://media.valorant-api.com/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Recon Bolt",
+        "icon": "https://media.valorant-api.com/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Owl Drone",
+        "icon": "https://media.valorant-api.com/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Hunter's Fury",
+        "icon": "https://media.valorant-api.com/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/sovabarrierdown19.mp3",
+        "text": "Come, into the unknown!",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/sovaclutch2.mp3",
+        "text": "Do not hunt the hunter.",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/sovaace6.mp3",
+        "text": "I'll tear through you all!",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Viper",
+    "slug": "viper",
+    "role": "Controller",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/4ee40330-ecdd-4f2f-98a8-eb1243428373/displayicon.png",
+    "description": "The American Chemist, Viper deploys an array of poisonous chemical devices to control the battlefield and choke the enemy's vision. If the toxins don't kill her prey, her mindgames surely will.",
+    "icon": "https://media.valorant-api.com/agents/707eab51-4836-f488-046a-cda6bf494859/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/707eab51-4836-f488-046a-cda6bf494859/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/707eab51-4836-f488-046a-cda6bf494859/background.png",
+    "colors": [
+      "#1a5f46",
+      "#2c4f5e"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Poison Cloud",
+        "icon": "https://media.valorant-api.com/agents/707eab51-4836-f488-046a-cda6bf494859/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Toxic Screen",
+        "icon": "https://media.valorant-api.com/agents/707eab51-4836-f488-046a-cda6bf494859/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Snake Bite",
+        "icon": "https://media.valorant-api.com/agents/707eab51-4836-f488-046a-cda6bf494859/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Viper's Pit",
+        "icon": "https://media.valorant-api.com/agents/707eab51-4836-f488-046a-cda6bf494859/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/viperbarrierdown20.mp3",
+        "text": "I'll take everything from them.",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/viperclutch2.mp3",
+        "text": "You only thought that was close.",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/viperace1.mp3",
+        "text": "You wanted a villain? I gave you a villain!",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Cypher",
+    "slug": "cypher",
+    "role": "Sentinel",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/5fc02f99-4091-4486-a531-98459a3e95e9/displayicon.png",
+    "description": "The Moroccan information broker, Cypher is a one-man surveillance network who keeps tabs on the enemy's every move. No secret is safe. No maneuver goes unseen. Cypher is always watching.",
+    "icon": "https://media.valorant-api.com/agents/117ed9e3-49f3-6512-3ccf-0cada7e3823b/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/117ed9e3-49f3-6512-3ccf-0cada7e3823b/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/117ed9e3-49f3-6512-3ccf-0cada7e3823b/background.png",
+    "colors": [
+      "#2f5078",
+      "#3f3f6c"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Cyber Cage",
+        "icon": "https://media.valorant-api.com/agents/117ed9e3-49f3-6512-3ccf-0cada7e3823b/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Spycam",
+        "icon": "https://media.valorant-api.com/agents/117ed9e3-49f3-6512-3ccf-0cada7e3823b/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Trapwire",
+        "icon": "https://media.valorant-api.com/agents/117ed9e3-49f3-6512-3ccf-0cada7e3823b/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Neural Theft",
+        "icon": "https://media.valorant-api.com/agents/117ed9e3-49f3-6512-3ccf-0cada7e3823b/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/cypherbarrierdown11.mp3",
+        "text": "We must shore up our defenses!",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/cypherclutch2.mp3",
+        "text": "You forget. I always play high stakes.",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/cypherace2.mp3",
+        "text": "Ah, you forget. I've always been a killer.",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Reyna",
+    "slug": "reyna",
+    "role": "Duelist",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/dbe8757e-9e92-4ed4-b39f-9dfc589691d4/displayicon.png",
+    "description": "Forged in the heart of Mexico, Reyna dominates single combat, popping off with each kill she scores. Her capability is only limited by her raw skill, making her sharply dependent on performance. ",
+    "icon": "https://media.valorant-api.com/agents/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc/background.png",
+    "colors": [
+      "#662d62",
+      "#2f2664"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Devour",
+        "icon": "https://media.valorant-api.com/agents/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Dismiss",
+        "icon": "https://media.valorant-api.com/agents/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Leer",
+        "icon": "https://media.valorant-api.com/agents/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Empress",
+        "icon": "https://media.valorant-api.com/agents/a3bfb853-43b2-7238-a4f1-ad90e9e46bcc/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/reynabarrierdown3.mp3",
+        "text": "At least they kept it interesting.",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/reynaclutch1.mp3",
+        "text": "If I act superior, it's because I am.",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/reynaace2.mp3",
+        "text": "Thank you. I was starving!",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Killjoy",
+    "slug": "killjoy",
+    "role": "Sentinel",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/5fc02f99-4091-4486-a531-98459a3e95e9/displayicon.png",
+    "description": "The genius of Germany, Killjoy effortlessly secures key battlefield positions with her arsenal of inventions. If their damage doesn't take her enemies out, the debuff her robots provide will make short work of them.",
+    "icon": "https://media.valorant-api.com/agents/1e58de9c-4950-5125-93e9-a0aee9f98746/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/1e58de9c-4950-5125-93e9-a0aee9f98746/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/1e58de9c-4950-5125-93e9-a0aee9f98746/background.png",
+    "colors": [
+      "#522162",
+      "#413950"
+    ],
+    "abilities": [
+      {
+        "slot": "Grenade",
+        "name": "Nanoswarm",
+        "icon": "https://media.valorant-api.com/agents/1e58de9c-4950-5125-93e9-a0aee9f98746/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ability1",
+        "name": "ALARMBOT",
+        "icon": "https://media.valorant-api.com/agents/1e58de9c-4950-5125-93e9-a0aee9f98746/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "TURRET",
+        "icon": "https://media.valorant-api.com/agents/1e58de9c-4950-5125-93e9-a0aee9f98746/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Lockdown",
+        "icon": "https://media.valorant-api.com/agents/1e58de9c-4950-5125-93e9-a0aee9f98746/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/killjoybarrierdown10.mp3",
+        "text": "Tactics beat firepower. Use that.",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/killjoyclutch1.mp3",
+        "text": "I had to focus for a second.",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/killjoyace1.mp3",
+        "text": "Go ahead! Call me tech support again!",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Breach",
+    "slug": "breach",
+    "role": "Initiator",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/1b47567f-8f7b-444b-aae3-b0c634622d10/displayicon.png",
+    "description": "The bionic Swede Breach fires powerful, targeted kinetic blasts to aggressively clear a path through enemy ground. The damage and disruption he inflicts ensures no fight is ever fair.",
+    "icon": "https://media.valorant-api.com/agents/5f8d3a7f-467b-97f3-062c-13acf203c006/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/5f8d3a7f-467b-97f3-062c-13acf203c006/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/5f8d3a7f-467b-97f3-062c-13acf203c006/background.png",
+    "colors": [
+      "#81331a",
+      "#523a23"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Flashpoint",
+        "icon": "https://media.valorant-api.com/agents/5f8d3a7f-467b-97f3-062c-13acf203c006/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Fault Line",
+        "icon": "https://media.valorant-api.com/agents/5f8d3a7f-467b-97f3-062c-13acf203c006/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Aftershock",
+        "icon": "https://media.valorant-api.com/agents/5f8d3a7f-467b-97f3-062c-13acf203c006/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Rolling Thunder",
+        "icon": "https://media.valorant-api.com/agents/5f8d3a7f-467b-97f3-062c-13acf203c006/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/breachbarrierdown3.mp3",
+        "text": "They want a fight? Let's fight.",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/breachclutch5.mp3",
+        "text": "Always got to overprove myself!",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/breachace3.mp3",
+        "text": "I'm firing on all cylinders!",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Omen",
+    "slug": "omen",
+    "role": "Controller",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/4ee40330-ecdd-4f2f-98a8-eb1243428373/displayicon.png",
+    "description": "A phantom of a memory, Omen hunts in the shadows. He renders enemies blind, teleports across the field, then lets paranoia take hold as his foe scrambles to uncover where he might strike next.",
+    "icon": "https://media.valorant-api.com/agents/8e253930-4c05-31dd-1b6c-968525494517/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/8e253930-4c05-31dd-1b6c-968525494517/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/8e253930-4c05-31dd-1b6c-968525494517/background.png",
+    "colors": [
+      "#433178",
+      "#344673"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Paranoia",
+        "icon": "https://media.valorant-api.com/agents/8e253930-4c05-31dd-1b6c-968525494517/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Dark Cover",
+        "icon": "https://media.valorant-api.com/agents/8e253930-4c05-31dd-1b6c-968525494517/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Shrouded Step",
+        "icon": "https://media.valorant-api.com/agents/8e253930-4c05-31dd-1b6c-968525494517/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "From the Shadows",
+        "icon": "https://media.valorant-api.com/agents/8e253930-4c05-31dd-1b6c-968525494517/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/omenbarrierdown17.mp3",
+        "text": "I will rip the light from them.",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/omenclutch1.mp3",
+        "text": "You forget your place.",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/omenace1.mp3",
+        "text": "Worthless dead fools.",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Jett",
+    "slug": "jett",
+    "role": "Duelist",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/dbe8757e-9e92-4ed4-b39f-9dfc589691d4/displayicon.png",
+    "description": "Representing her home country of South Korea, Jett's agile and evasive fighting style lets her take risks no one else can. She runs circles around every skirmish, cutting enemies up before they even know what hit them.",
+    "icon": "https://media.valorant-api.com/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/background.png",
+    "colors": [
+      "#25607a",
+      "#0f1923"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Updraft",
+        "icon": "https://media.valorant-api.com/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Tailwind",
+        "icon": "https://media.valorant-api.com/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Cloudburst",
+        "icon": "https://media.valorant-api.com/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Blade Storm",
+        "icon": "https://media.valorant-api.com/agents/add6443a-41bd-e414-f6ad-e58d267f4e95/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/jettbarrierdown11.mp3",
+        "text": "This is our home. Keep them out!",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/jettclutch4.mp3",
+        "text": "What would you all do without me?",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/jettace1.mp3",
+        "text": "Ha! You should've seen your faces!",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Raze",
+    "slug": "raze",
+    "role": "Duelist",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/dbe8757e-9e92-4ed4-b39f-9dfc589691d4/displayicon.png",
+    "description": "Raze explodes out of Brazil with her big personality and big guns. With her blunt-force-trauma playstyle, she excels at flushing entrenched enemies and clearing tight spaces with a generous dose of \"boom.\"",
+    "icon": "https://media.valorant-api.com/agents/f94c3b30-42be-e959-889c-5aa313dba261/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/f94c3b30-42be-e959-889c-5aa313dba261/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/f94c3b30-42be-e959-889c-5aa313dba261/background.png",
+    "colors": [
+      "#742e1e",
+      "#2c5942"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Blast Pack",
+        "icon": "https://media.valorant-api.com/agents/f94c3b30-42be-e959-889c-5aa313dba261/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Paint Shells",
+        "icon": "https://media.valorant-api.com/agents/f94c3b30-42be-e959-889c-5aa313dba261/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Boom Bot",
+        "icon": "https://media.valorant-api.com/agents/f94c3b30-42be-e959-889c-5aa313dba261/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Showstopper",
+        "icon": "https://media.valorant-api.com/agents/f94c3b30-42be-e959-889c-5aa313dba261/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/razebarrierdown7.mp3",
+        "text": "We'll come back. I can feel it.",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/razeclutch2.mp3",
+        "text": "Woohoo! I'm the pride of Bahia!",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/razeace1.mp3",
+        "text": "Talk about collateral damage! Ha!",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Skye",
+    "slug": "skye",
+    "role": "Initiator",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/1b47567f-8f7b-444b-aae3-b0c634622d10/displayicon.png",
+    "description": "Hailing from Australia, Skye and her band of beasts trailblaze the way through hostile territory. With her creations hampering the enemy, and her power to heal others, the team is strongest and safest by Skye's side.",
+    "icon": "https://media.valorant-api.com/agents/6f2a04ca-43e0-be17-7f36-b3908627744d/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/6f2a04ca-43e0-be17-7f36-b3908627744d/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/6f2a04ca-43e0-be17-7f36-b3908627744d/background.png",
+    "colors": [
+      "#436a51",
+      "#4f1413"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Trailblazer",
+        "icon": "https://media.valorant-api.com/agents/6f2a04ca-43e0-be17-7f36-b3908627744d/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Guiding Light",
+        "icon": "https://media.valorant-api.com/agents/6f2a04ca-43e0-be17-7f36-b3908627744d/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Regrowth",
+        "icon": "https://media.valorant-api.com/agents/6f2a04ca-43e0-be17-7f36-b3908627744d/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Seekers",
+        "icon": "https://media.valorant-api.com/agents/6f2a04ca-43e0-be17-7f36-b3908627744d/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/skyebarrierdown14.mp3",
+        "text": "Find the weak point, and break it.",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/skyeclutch2.mp3",
+        "text": "Ah, now there's some serenity.",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/skyeace2.mp3",
+        "text": "How did I get this powerful?!",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Yoru",
+    "slug": "yoru",
+    "role": "Duelist",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/dbe8757e-9e92-4ed4-b39f-9dfc589691d4/displayicon.png",
+    "description": "Japanese native Yoru rips holes straight through reality to infiltrate enemy lines unseen. Using deception and aggression in equal measure, he gets the drop on each target before they know where to look.",
+    "icon": "https://media.valorant-api.com/agents/7f94d92c-4234-0a36-9646-3a87eb8b5c89/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/7f94d92c-4234-0a36-9646-3a87eb8b5c89/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/7f94d92c-4234-0a36-9646-3a87eb8b5c89/background.png",
+    "colors": [
+      "#222b67",
+      "#261e4f"
+    ],
+    "abilities": [
+      {
+        "slot": "Grenade",
+        "name": "FAKEOUT",
+        "icon": "https://media.valorant-api.com/agents/7f94d92c-4234-0a36-9646-3a87eb8b5c89/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ability1",
+        "name": "BLINDSIDE",
+        "icon": "https://media.valorant-api.com/agents/7f94d92c-4234-0a36-9646-3a87eb8b5c89/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "GATECRASH",
+        "icon": "https://media.valorant-api.com/agents/7f94d92c-4234-0a36-9646-3a87eb8b5c89/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "DIMENSIONAL DRIFT",
+        "icon": "https://media.valorant-api.com/agents/7f94d92c-4234-0a36-9646-3a87eb8b5c89/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/yorubarrierdown3.mp3",
+        "text": "You all have guns. Now use them!",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/yoruclutch1.mp3",
+        "text": "Anyone else think they can kill a god?",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/yoruace1.mp3",
+        "text": "Send five more, we can do this again!",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Astra",
+    "slug": "astra",
+    "role": "Controller",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/4ee40330-ecdd-4f2f-98a8-eb1243428373/displayicon.png",
+    "description": "Ghanaian Agent Astra harnesses the energies of the cosmos to reshape battlefields to her whim. With full command of her astral form and a talent for deep strategic foresight, she's always eons ahead of her enemy's next move.",
+    "icon": "https://media.valorant-api.com/agents/41fb69c1-4189-7b37-f117-bcaf1e96f1bf/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/41fb69c1-4189-7b37-f117-bcaf1e96f1bf/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/41fb69c1-4189-7b37-f117-bcaf1e96f1bf/background.png",
+    "colors": [
+      "#26146c",
+      "#5210c6"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Nova Pulse",
+        "icon": "https://media.valorant-api.com/agents/41fb69c1-4189-7b37-f117-bcaf1e96f1bf/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Nebula  / Dissipate",
+        "icon": "https://media.valorant-api.com/agents/41fb69c1-4189-7b37-f117-bcaf1e96f1bf/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Gravity Well",
+        "icon": "https://media.valorant-api.com/agents/41fb69c1-4189-7b37-f117-bcaf1e96f1bf/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Astral Form / Cosmic Divide",
+        "icon": "https://media.valorant-api.com/agents/41fb69c1-4189-7b37-f117-bcaf1e96f1bf/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/astrabarrierdown18.mp3",
+        "text": "I am with you. We are strong.",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/astraclutch2.mp3",
+        "text": "Woohoohoo! I'm too sharp for them!",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/astraace1.mp3",
+        "text": "The barrel of the gun is always dark.",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "KAY/O",
+    "slug": "kayo",
+    "role": "Initiator",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/1b47567f-8f7b-444b-aae3-b0c634622d10/displayicon.png",
+    "description": "KAY/O is a machine of war built for a single purpose: neutralizing radiants. His power to Suppress enemy abilities dismantles his opponents' capacity to fight back, securing him and his allies the ultimate edge.",
+    "icon": "https://media.valorant-api.com/agents/601dbbe7-43ce-be57-2a40-4abd24953621/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/601dbbe7-43ce-be57-2a40-4abd24953621/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/601dbbe7-43ce-be57-2a40-4abd24953621/background.png",
+    "colors": [
+      "#1c2a69",
+      "#1a1e4b"
+    ],
+    "abilities": [
+      {
+        "slot": "Grenade",
+        "name": "FRAG/ment",
+        "icon": "https://media.valorant-api.com/agents/601dbbe7-43ce-be57-2a40-4abd24953621/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ability1",
+        "name": "FLASH/drive",
+        "icon": "https://media.valorant-api.com/agents/601dbbe7-43ce-be57-2a40-4abd24953621/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "ZERO/point",
+        "icon": "https://media.valorant-api.com/agents/601dbbe7-43ce-be57-2a40-4abd24953621/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "NULL/cmd",
+        "icon": "https://media.valorant-api.com/agents/601dbbe7-43ce-be57-2a40-4abd24953621/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/kayobarrierdown13.mp3",
+        "text": "We need an edge, leave it to me.",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/kayoclutch1.mp3",
+        "text": "Go back to fighting bots.",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/kayoace2.mp3",
+        "text": "I know what they're thinking, aimbot.",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Chamber",
+    "slug": "chamber",
+    "role": "Sentinel",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/5fc02f99-4091-4486-a531-98459a3e95e9/displayicon.png",
+    "description": "Well-dressed and well-armed, French weapons designer Chamber expels aggressors with deadly precision. He leverages his custom arsenal to hold the line and pick off enemies from afar, with a contingency built for every plan.",
+    "icon": "https://media.valorant-api.com/agents/22697a3d-45bf-8dd7-4fec-84a9e28c69d7/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/22697a3d-45bf-8dd7-4fec-84a9e28c69d7/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/22697a3d-45bf-8dd7-4fec-84a9e28c69d7/background.png",
+    "colors": [
+      "#20435b",
+      "#372d2b"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability2",
+        "name": "Rendezvous",
+        "icon": "https://media.valorant-api.com/agents/22697a3d-45bf-8dd7-4fec-84a9e28c69d7/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Trademark",
+        "icon": "https://media.valorant-api.com/agents/22697a3d-45bf-8dd7-4fec-84a9e28c69d7/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ability1",
+        "name": "Headhunter",
+        "icon": "https://media.valorant-api.com/agents/22697a3d-45bf-8dd7-4fec-84a9e28c69d7/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Tour De Force",
+        "icon": "https://media.valorant-api.com/agents/22697a3d-45bf-8dd7-4fec-84a9e28c69d7/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/chamberbarrierdown7.mp3",
+        "text": "It feels like we've won already.",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/chamberclutch1.mp3",
+        "text": "How do I get away with these things?",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/chamberace1.mp3",
+        "text": "Oh thank you, thank you, you are too kind.",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Neon",
+    "slug": "neon",
+    "role": "Duelist",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/dbe8757e-9e92-4ed4-b39f-9dfc589691d4/displayicon.png",
+    "description": "Filipino Agent Neon surges forward at shocking speeds, discharging bursts of bioelectric radiance as fast as her body generates it. She races ahead to catch enemies off guard then strikes them down quicker than lightning.",
+    "icon": "https://media.valorant-api.com/agents/bb2a4828-46eb-8cd1-e765-15848195d751/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/bb2a4828-46eb-8cd1-e765-15848195d751/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/bb2a4828-46eb-8cd1-e765-15848195d751/background.png",
+    "colors": [
+      "#413476",
+      "#38328e"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability2",
+        "name": "High Gear",
+        "icon": "https://media.valorant-api.com/agents/bb2a4828-46eb-8cd1-e765-15848195d751/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Ability1",
+        "name": "Relay Bolt",
+        "icon": "https://media.valorant-api.com/agents/bb2a4828-46eb-8cd1-e765-15848195d751/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Fast Lane",
+        "icon": "https://media.valorant-api.com/agents/bb2a4828-46eb-8cd1-e765-15848195d751/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Overdrive",
+        "icon": "https://media.valorant-api.com/agents/bb2a4828-46eb-8cd1-e765-15848195d751/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/neonbarrierdown8.mp3",
+        "text": "Could be worse, could be better.",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/neonclutch2.mp3",
+        "text": "Try that again, I dare you!",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/neonace1.mp3",
+        "text": "You made me care. Big mistake.",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Fade",
+    "slug": "fade",
+    "role": "Initiator",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/1b47567f-8f7b-444b-aae3-b0c634622d10/displayicon.png",
+    "description": "Turkish bounty hunter Fade unleashes the power of raw nightmare to seize enemy secrets. Attuned with terror itself, she hunts down targets and reveals their deepest fears - before crushing them in the dark.",
+    "icon": "https://media.valorant-api.com/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/background.png",
+    "colors": [
+      "#1d2846",
+      "#18344c"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Seize",
+        "icon": "https://media.valorant-api.com/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Haunt",
+        "icon": "https://media.valorant-api.com/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Prowler",
+        "icon": "https://media.valorant-api.com/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Nightfall",
+        "icon": "https://media.valorant-api.com/agents/dade69b4-4f5a-8528-247b-219e5a1facd6/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/fadebarrierdown10.mp3",
+        "text": "Stay awake! They strike again.",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/fadeclutch3.mp3",
+        "text": "You can't kill a nightmare!",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/fadeace1.mp3",
+        "text": "Don't worry, I did all the work!",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Harbor",
+    "slug": "harbor",
+    "role": "Controller",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/4ee40330-ecdd-4f2f-98a8-eb1243428373/displayicon.png",
+    "description": "Hailing from India’s coast, Harbor storms the field wielding ancient technology with dominion over water. He unleashes frothing rapids and crushing waves to shield his allies, or pummel those that oppose him.",
+    "icon": "https://media.valorant-api.com/agents/95b78ed7-4637-86d9-7e41-71ba8c293152/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/95b78ed7-4637-86d9-7e41-71ba8c293152/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/95b78ed7-4637-86d9-7e41-71ba8c293152/background.png",
+    "colors": [
+      "#275146",
+      "#11434e"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "High Tide",
+        "icon": "https://media.valorant-api.com/agents/95b78ed7-4637-86d9-7e41-71ba8c293152/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Storm Surge",
+        "icon": "https://media.valorant-api.com/agents/95b78ed7-4637-86d9-7e41-71ba8c293152/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Cove",
+        "icon": "https://media.valorant-api.com/agents/95b78ed7-4637-86d9-7e41-71ba8c293152/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Reckoning",
+        "icon": "https://media.valorant-api.com/agents/95b78ed7-4637-86d9-7e41-71ba8c293152/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/harborbarrierdown10.mp3",
+        "text": "Huh, they're pretty airtight huh?",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/harborclutch1.mp3",
+        "text": "What can I say? I do this for a living.",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/harborace1.mp3",
+        "text": "History will forget them!",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Gekko",
+    "slug": "gekko",
+    "role": "Initiator",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/1b47567f-8f7b-444b-aae3-b0c634622d10/displayicon.png",
+    "description": "Gekko the Angeleno leads a tight-knit crew of calamitous creatures. His buddies bound forward, scattering enemies out of the way, with Gekko chasing them down to regroup and go again.",
+    "icon": "https://media.valorant-api.com/agents/e370fa57-4757-3604-3648-499e1f642d3f/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/e370fa57-4757-3604-3648-499e1f642d3f/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/e370fa57-4757-3604-3648-499e1f642d3f/background.png",
+    "colors": [
+      "#371c5c",
+      "#3a2656"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Wingman",
+        "icon": "https://media.valorant-api.com/agents/e370fa57-4757-3604-3648-499e1f642d3f/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Dizzy",
+        "icon": "https://media.valorant-api.com/agents/e370fa57-4757-3604-3648-499e1f642d3f/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Mosh Pit",
+        "icon": "https://media.valorant-api.com/agents/e370fa57-4757-3604-3648-499e1f642d3f/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Thrash",
+        "icon": "https://media.valorant-api.com/agents/e370fa57-4757-3604-3648-499e1f642d3f/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/gekkobarrierdown9.mp3",
+        "text": "They better try something else.",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/gekkoclutch2.mp3",
+        "text": "Your first mistake was assuming I couldn't.",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/gekkoace1.mp3",
+        "text": "Y'all should have stayed home!",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Deadlock",
+    "slug": "deadlock",
+    "role": "Sentinel",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/5fc02f99-4091-4486-a531-98459a3e95e9/displayicon.png",
+    "description": "Norwegian operative Deadlock deploys an array of cutting-edge nanowire to secure the battlefield from even the most lethal assault. No one escapes her vigilant watch, nor survives her unyielding ferocity.",
+    "icon": "https://media.valorant-api.com/agents/cc8b64c8-4b25-4ff9-6e7f-37b4da43d235/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/cc8b64c8-4b25-4ff9-6e7f-37b4da43d235/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/cc8b64c8-4b25-4ff9-6e7f-37b4da43d235/background.png",
+    "colors": [
+      "#425495",
+      "#221c3d"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Sonic Sensor",
+        "icon": "https://media.valorant-api.com/agents/cc8b64c8-4b25-4ff9-6e7f-37b4da43d235/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Barrier Mesh",
+        "icon": "https://media.valorant-api.com/agents/cc8b64c8-4b25-4ff9-6e7f-37b4da43d235/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "GravNet",
+        "icon": "https://media.valorant-api.com/agents/cc8b64c8-4b25-4ff9-6e7f-37b4da43d235/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Annihilation",
+        "icon": "https://media.valorant-api.com/agents/cc8b64c8-4b25-4ff9-6e7f-37b4da43d235/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/deadlockbarrierdown18.mp3",
+        "text": "No heroics, follow protocol.",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/deadlockclutch3.mp3",
+        "text": "I know how to fend for myself.",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/deadlockace3.mp3",
+        "text": "There is no hiding from a Ståljeger!",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Iso",
+    "slug": "iso",
+    "role": "Duelist",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/dbe8757e-9e92-4ed4-b39f-9dfc589691d4/displayicon.png",
+    "description": "Chinese fixer for hire Iso falls into a flow state to dismantle the opposition. Reconfiguring ambient energy into bulletproof protection, he advances with focus towards his next duel to the death.",
+    "icon": "https://media.valorant-api.com/agents/0e38b510-41a8-5780-5e8f-568b2a4f2d6c/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/0e38b510-41a8-5780-5e8f-568b2a4f2d6c/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/0e38b510-41a8-5780-5e8f-568b2a4f2d6c/background.png",
+    "colors": [
+      "#30336e",
+      "#20155d"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Undercut",
+        "icon": "https://media.valorant-api.com/agents/0e38b510-41a8-5780-5e8f-568b2a4f2d6c/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Kill Contract",
+        "icon": "https://media.valorant-api.com/agents/0e38b510-41a8-5780-5e8f-568b2a4f2d6c/abilities/ultimate/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Double Tap",
+        "icon": "https://media.valorant-api.com/agents/0e38b510-41a8-5780-5e8f-568b2a4f2d6c/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Contingency",
+        "icon": "https://media.valorant-api.com/agents/0e38b510-41a8-5780-5e8f-568b2a4f2d6c/abilities/grenade/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/isobarrierdown10.mp3",
+        "text": "Get ready, they're coming back.",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/isoclutch2.mp3",
+        "text": "I have a reputation to maintain.",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/isoace3.mp3",
+        "text": "Five chances and they missed them all.",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Clove",
+    "slug": "clove",
+    "role": "Controller",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/4ee40330-ecdd-4f2f-98a8-eb1243428373/displayicon.png",
+    "description": "Scottish troublemaker Clove makes mischief for enemies in both the heat of combat and the cold of death. The young immortal keeps foes guessing, even from beyond the grave, their return to the living only ever a moment away.",
+    "icon": "https://media.valorant-api.com/agents/1dbf2edd-4729-0984-3115-daa5eed44993/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/1dbf2edd-4729-0984-3115-daa5eed44993/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/1dbf2edd-4729-0984-3115-daa5eed44993/background.png",
+    "colors": [
+      "#4b1d80",
+      "#c347c7"
+    ],
+    "abilities": [
+      {
+        "slot": "Grenade",
+        "name": "Pick-me-up",
+        "icon": "https://media.valorant-api.com/agents/1dbf2edd-4729-0984-3115-daa5eed44993/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Ruse",
+        "icon": "https://media.valorant-api.com/agents/1dbf2edd-4729-0984-3115-daa5eed44993/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Not Dead Yet",
+        "icon": "https://media.valorant-api.com/agents/1dbf2edd-4729-0984-3115-daa5eed44993/abilities/ultimate/displayicon.png"
+      },
+      {
+        "slot": "Ability1",
+        "name": "Meddle",
+        "icon": "https://media.valorant-api.com/agents/1dbf2edd-4729-0984-3115-daa5eed44993/abilities/ability1/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/clovebarrierdown20.mp3",
+        "text": "What about winning stuff, aye?",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/cloveclutch2.mp3",
+        "text": "Do I get a prize for that or what?",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/cloveace1.mp3",
+        "text": "And I did that with a sore tummy!",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Vyse",
+    "slug": "vyse",
+    "role": "Sentinel",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/5fc02f99-4091-4486-a531-98459a3e95e9/displayicon.png",
+    "description": "Metallic mastermind Vyse unleashes liquid metal to isolate, trap, and disarm her enemies. Through cunning and manipulation, she forces all who oppose her to fear the battlefield itself.",
+    "icon": "https://media.valorant-api.com/agents/efba5359-4016-a1e5-7626-b1ae76895940/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/efba5359-4016-a1e5-7626-b1ae76895940/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/efba5359-4016-a1e5-7626-b1ae76895940/background.png",
+    "colors": [
+      "#492280",
+      "#ffffff"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability1",
+        "name": "Shear",
+        "icon": "https://media.valorant-api.com/agents/efba5359-4016-a1e5-7626-b1ae76895940/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ability2",
+        "name": "Arc Rose",
+        "icon": "https://media.valorant-api.com/agents/efba5359-4016-a1e5-7626-b1ae76895940/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Razorvine",
+        "icon": "https://media.valorant-api.com/agents/efba5359-4016-a1e5-7626-b1ae76895940/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Steel Garden",
+        "icon": "https://media.valorant-api.com/agents/efba5359-4016-a1e5-7626-b1ae76895940/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/vysebarrierdown12.mp3",
+        "text": "Right then, let's go kill them.",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/vyseclutch1.mp3",
+        "text": "I am everything that you're not!",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/vyseace1.mp3",
+        "text": "I have the vision, I am the means.",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Tejo",
+    "slug": "tejo",
+    "role": "Initiator",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/1b47567f-8f7b-444b-aae3-b0c634622d10/displayicon.png",
+    "description": "A veteran intelligence consultant from Colombia, Tejo’s ballistic guidance system pressures the enemy to relinquish their ground - or their lives. His targeted strikes keep opponents off balance and under his heel.",
+    "icon": "https://media.valorant-api.com/agents/b444168c-4e35-8076-db47-ef9bf368f384/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/b444168c-4e35-8076-db47-ef9bf368f384/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/b444168c-4e35-8076-db47-ef9bf368f384/background.png",
+    "colors": [
+      "#80451b",
+      "#ffffff"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability2",
+        "name": "Guided Salvo",
+        "icon": "https://media.valorant-api.com/agents/b444168c-4e35-8076-db47-ef9bf368f384/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Ability1",
+        "name": "Special Delivery",
+        "icon": "https://media.valorant-api.com/agents/b444168c-4e35-8076-db47-ef9bf368f384/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Armageddon",
+        "icon": "https://media.valorant-api.com/agents/b444168c-4e35-8076-db47-ef9bf368f384/abilities/ultimate/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Stealth Drone",
+        "icon": "https://media.valorant-api.com/agents/b444168c-4e35-8076-db47-ef9bf368f384/abilities/grenade/displayicon.png"
+      }
+    ],
+    "voices": [
+      {
+        "src": "/voices/tejobarrierdown6.mp3",
+        "text": "No excuses, get what we came for.",
+        "kind": "BarrierDown"
+      },
+      {
+        "src": "/voices/tejoclutch2.mp3",
+        "text": "They gave me no choice.",
+        "kind": "Clutch"
+      },
+      {
+        "src": "/voices/tejoace1.mp3",
+        "text": "Don't mess with an old soldier.",
+        "kind": "Ace"
+      }
+    ]
+  },
+  {
+    "name": "Waylay",
+    "slug": "waylay",
+    "role": "Duelist",
+    "roleIcon": "https://media.valorant-api.com/agents/roles/dbe8757e-9e92-4ed4-b39f-9dfc589691d4/displayicon.png",
+    "description": "Thailand's prismatic radiant Waylay transforms into light itself as she darts across the battlefield, striking down her targets through shards of light before flitting back to safety, all in the blink of an eye.",
+    "icon": "https://media.valorant-api.com/agents/df1cb487-4902-002e-5c17-d28e83e78588/displayicon.png",
+    "portrait": "https://media.valorant-api.com/agents/df1cb487-4902-002e-5c17-d28e83e78588/fullportrait.png",
+    "background": "https://media.valorant-api.com/agents/df1cb487-4902-002e-5c17-d28e83e78588/background.png",
+    "colors": [
+      "#482e61",
+      "#0f1923"
+    ],
+    "abilities": [
+      {
+        "slot": "Ability2",
+        "name": "Refract",
+        "icon": "https://media.valorant-api.com/agents/df1cb487-4902-002e-5c17-d28e83e78588/abilities/ability2/displayicon.png"
+      },
+      {
+        "slot": "Grenade",
+        "name": "Saturate",
+        "icon": "https://media.valorant-api.com/agents/df1cb487-4902-002e-5c17-d28e83e78588/abilities/grenade/displayicon.png"
+      },
+      {
+        "slot": "Ability1",
+        "name": "Lightspeed",
+        "icon": "https://media.valorant-api.com/agents/df1cb487-4902-002e-5c17-d28e83e78588/abilities/ability1/displayicon.png"
+      },
+      {
+        "slot": "Ultimate",
+        "name": "Convergent Paths",
+        "icon": "https://media.valorant-api.com/agents/df1cb487-4902-002e-5c17-d28e83e78588/abilities/ultimate/displayicon.png"
+      }
+    ],
+    "voices": []
+  }
+]
