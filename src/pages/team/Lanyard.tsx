@@ -4,6 +4,7 @@ import {
   Canvas,
   extend,
   useFrame,
+  useThree,
   type MaterialNode,
   type Object3DNode,
   type ThreeElements,
@@ -47,6 +48,25 @@ useGLTF.preload(cardGLB);
 /** Anchor starts this far above its resting point and eases down, so the card drops in from off-screen. */
 const DROP = 9;
 const DROP_SECONDS = 1.1;
+/** At rest the card hangs ~4.5 units below the anchor, so this centres it slightly below the middle of the view. */
+const ANCHOR_Y = 4.3;
+const CAMERA_Z = 30;
+/** Visible card mesh size in world units (card.glb at scale 2.25). */
+const CARD_H = 2.3;
+const CARD_W = 1.61;
+
+/** Fit the card to ~56% of the stage height, or ~62% of its width on narrow screens. */
+function Framing() {
+  const camera = useThree((s) => s.camera) as THREE.PerspectiveCamera;
+  const { width, height } = useThree((s) => s.size);
+  useEffect(() => {
+    const aspect = width / Math.max(1, height);
+    const halfH = Math.max(CARD_H / (2 * 0.56), CARD_W / (2 * 0.62 * aspect));
+    camera.fov = THREE.MathUtils.radToDeg(2 * Math.atan(halfH / CAMERA_Z));
+    camera.updateProjectionMatrix();
+  }, [camera, width, height]);
+  return null;
+}
 
 type LanyardProps = {
   atlas: HTMLCanvasElement;
@@ -65,16 +85,18 @@ export default function Lanyard({ atlas, strap, flipped, onTap }: LanyardProps) 
 
   return (
     <Canvas
-      camera={{ position: [0, 0, 30], fov: 16 }}
-      dpr={[1, isMobile ? 1.5 : 2]}
+      camera={{ position: [0, 0, CAMERA_Z], fov: 9 }}
+      dpr={[1, 2]}
+      flat
       gl={{ alpha: true }}
       onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), 0)}
     >
-      <ambientLight intensity={2} />
+      <Framing />
+      <ambientLight intensity={2.6} />
       <Physics gravity={[0, -40, 0]} timeStep={isMobile ? 1 / 30 : 1 / 60}>
         <Band isMobile={isMobile} atlas={atlas} strap={strap} flipped={flipped} onTap={onTap} />
       </Physics>
-      <Environment blur={0.75}>
+      <Environment blur={0.75} environmentIntensity={0.45}>
         <Lightformer intensity={2} color="white" position={[0, -1, 5]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
         <Lightformer intensity={3} color="white" position={[-1, -1, 1]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
         <Lightformer intensity={3} color="white" position={[1, 1, 1]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
@@ -175,7 +197,7 @@ function Band({ isMobile, atlas, strap, flipped, onTap }: BandProps) {
     if (dropT.current < 1) {
       dropT.current = Math.min(1, dropT.current + delta / DROP_SECONDS);
       const e = 1 - Math.pow(1 - dropT.current, 3);
-      fixed.current.setNextKinematicTranslation({ x: 0, y: 4 + DROP * (1 - e), z: 0 });
+      fixed.current.setNextKinematicTranslation({ x: 0, y: ANCHOR_Y + DROP * (1 - e), z: 0 });
       [card, j1, j2, j3].forEach((ref) => ref.current?.wakeUp());
     }
 
@@ -220,7 +242,7 @@ function Band({ isMobile, atlas, strap, flipped, onTap }: BandProps) {
 
   return (
     <>
-      <group position={[0, 4, 0]}>
+      <group position={[0, ANCHOR_Y, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="kinematicPosition" position={[0, DROP, 0]} />
         <RigidBody position={[0.3, DROP - 0.9, 0]} ref={j1} {...segmentProps}>
           <BallCollider args={[0.1]} />
@@ -251,10 +273,10 @@ function Band({ isMobile, atlas, strap, flipped, onTap }: BandProps) {
                 <meshPhysicalMaterial
                   map={cardMap}
                   map-anisotropy={16}
-                  clearcoat={isMobile ? 0 : 0.6}
-                  clearcoatRoughness={0.2}
-                  roughness={0.7}
-                  metalness={0.25}
+                  clearcoat={isMobile ? 0 : 1}
+                  clearcoatRoughness={0.12}
+                  roughness={0.65}
+                  metalness={0}
                 />
               </mesh>
               <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />
