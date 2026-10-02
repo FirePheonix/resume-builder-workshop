@@ -6,6 +6,8 @@
   export default defineConfig({
     plugins: [react()],
     resolve: {
+      // meshline pulls its own three; two copies break instanceof checks in R3F.
+      dedupe: ['three'],
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {
         'vaul@1.1.2': 'vaul',
