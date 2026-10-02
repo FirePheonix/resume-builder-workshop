@@ -124,11 +124,6 @@ function rng(seed: number) {
   };
 }
 
-function hexA(hex: string, a: number) {
-  const n = parseInt(hex.replace("#", "").slice(0, 6), 16);
-  return `rgba(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}, ${a})`;
-}
-
 function grain(ctx: Ctx, w: number, h: number, seed: number, color: string, count: number) {
   const r = rng(seed);
   ctx.fillStyle = color;
@@ -150,7 +145,13 @@ function passNo(team: PublicTeam) {
   return `NO. ${String(team.number || 0).padStart(3, "0")}`;
 }
 
-function drawFront(ctx: Ctx, team: PublicTeam, agents: (Agent | undefined)[], faces: (HTMLImageElement | null)[]) {
+function drawFront(
+  ctx: Ctx,
+  team: PublicTeam,
+  agents: (Agent | undefined)[],
+  faces: (HTMLImageElement | null)[],
+  roleIcons: (HTMLImageElement | null)[],
+) {
   const W = FACE_W;
   const H = FACE_H;
   const bg = ctx.createLinearGradient(0, 0, 0, H);
@@ -160,46 +161,18 @@ function drawFront(ctx: Ctx, team: PublicTeam, agents: (Agent | undefined)[], fa
   ctx.fillRect(0, 0, W, H);
   grain(ctx, W, H, hash(team.slug), "rgba(15,25,35,0.05)", 9000);
 
-  const top = 150;
-  const bandH = (H - top - 170) / 3;
-  ctx.save();
-  ctx.beginPath();
-  ctx.rect(0, 112, W, H - 172 - 112);
-  ctx.clip();
-  agents.forEach((agent, i) => {
-    const face = faces[i];
-    const size = bandH * 1.36;
-    const cx = W - size * 0.36 - (i === 1 ? 90 : 0);
-    const cy = top + bandH * i + bandH / 2;
-    const pad = 70;
-    const off = canvas(W, Math.ceil(bandH + pad * 2));
-    const o = off.getContext("2d")!;
-    const localCy = off.height / 2;
-    const accent = agent?.colors[0] ?? RED;
-    const glow = o.createRadialGradient(cx, localCy, 10, cx, localCy, size * 0.62);
-    glow.addColorStop(0, hexA(accent, 0.55));
-    glow.addColorStop(1, hexA(accent, 0));
-    o.fillStyle = glow;
-    o.fillRect(0, 0, W, off.height);
-    if (face) o.drawImage(face, cx - size / 2, localCy - size / 2, size, size);
-    o.globalCompositeOperation = "destination-in";
-    const v = o.createLinearGradient(0, 0, 0, off.height);
-    v.addColorStop(0, "rgba(0,0,0,0)");
-    v.addColorStop(0.24, "rgba(0,0,0,1)");
-    v.addColorStop(0.8, "rgba(0,0,0,1)");
-    v.addColorStop(1, "rgba(0,0,0,0)");
-    o.fillStyle = v;
-    o.fillRect(0, 0, W, off.height);
-    const hz = o.createLinearGradient(cx - size * 0.5, 0, cx - size * 0.18, 0);
-    hz.addColorStop(0, "rgba(0,0,0,0)");
-    hz.addColorStop(1, "rgba(0,0,0,1)");
-    o.fillStyle = hz;
-    o.fillRect(0, 0, W, off.height);
-    ctx.drawImage(off, 0, cy - localCy);
-  });
-  ctx.restore();
+  cropMarks(ctx, W, H, "rgba(15,25,35,0.4)");
 
-  const L = 72;
+  const L = 64;
+  const TX = 492;
+  const TW = W - L - TX;
+  const tTop = 150;
+  const gap = 16;
+  const TH = (H - 184 - tTop - gap * 2) / 3;
+  agents.forEach((agent, i) => {
+    drawTile(ctx, TX, tTop + i * (TH + gap), TW, TH, i, team.members[i], agent, faces[i], roleIcons[i]);
+  });
+
   slot(ctx, false);
   ctx.textBaseline = "alphabetic";
   ctx.fillStyle = RED;
@@ -211,52 +184,75 @@ function drawFront(ctx: Ctx, team: PublicTeam, agents: (Agent | undefined)[], fa
   ctx.textAlign = "right";
   ctx.fillText(passNo(team), W - L, 92);
   ctx.textAlign = "left";
+  ctx.fillRect(L, 122, W - L * 2, 2);
 
-  const nameW = 560;
+  const colW = TX - L - 36;
+  ctx.font = LABEL(18);
+  ctx.fillStyle = RED;
+  ctx.fillText("SQUAD // TEAM PASS", L, 190);
   spacing(ctx, 0);
-  const fit = fitLines(ctx, team.teamName, nameW, 3, 176, 70, 340);
+  const fit = fitLines(ctx, team.teamName, colW, 4, 150, 60, 470);
   ctx.font = DISPLAY(fit.size);
   ctx.fillStyle = INK;
   const lh = fit.size * 0.86;
-  let y = 196 + fit.size * 0.78;
-  fit.lines.forEach((line, i) => {
-    ctx.fillText(line, L - 4, y + i * lh);
-  });
+  let y = 214 + fit.size * 0.8;
+  fit.lines.forEach((line, i) => ctx.fillText(line, L - 3, y + i * lh));
   y += (fit.lines.length - 1) * lh;
 
-  y += 44;
-  ctx.font = BODY(22);
+  ctx.font = BODY(21);
   ctx.fillStyle = "#56616b";
-  ["A three-agent squad cleared for", "Codezilla 3.0 — the open book", "codathon at IIIT Sonepat."].forEach((t, i) =>
-    ctx.fillText(t, L, y + i * 30),
+  ["Three agents. One squad.", "Cleared for Codezilla 3.0,", "the open book codathon."].forEach((t, i) =>
+    ctx.fillText(t, L, y + 50 + i * 29),
   );
 
-  let ry = Math.max(y + 150, top + bandH + 40);
-  team.members.forEach((m, i) => {
-    const agent = agents[i];
-    ctx.fillStyle = agent?.colors[0] ?? RED;
-    ctx.fillRect(L, ry - 15, 12, 12);
-    ctx.font = LABEL(18);
+  const rows: [string, string][] = [
+    ["DATE", "5 OCT*"],
+    ["VENUE", "LABS, IIIT SONEPAT"],
+    ["FORMAT", "OPEN BOOK"],
+  ];
+  const iy = y + 150;
+  rows.forEach(([k, v], i) => {
+    const ry = iy + i * 100;
+    ctx.fillStyle = "rgba(15,25,35,0.16)";
+    ctx.fillRect(L, ry, colW, 2);
+    ctx.font = LABEL(15);
     spacing(ctx, 4);
     ctx.fillStyle = MUTED;
-    ctx.fillText(`0${i + 1} / ${m.role.toUpperCase()}`, L + 24, ry - 3);
+    ctx.fillText(k, L, ry + 30);
     spacing(ctx, 0);
-    ctx.font = BODY(36, 600);
+    ctx.font = DISPLAY(58);
     ctx.fillStyle = INK;
-    ctx.fillText(ellipsize(ctx, m.name, 470), L, ry + 40);
-    ctx.font = LABEL(18);
-    spacing(ctx, 4);
-    ctx.fillStyle = RED;
-    ctx.fillText(`${m.agent.toUpperCase()} — ${(agent?.role ?? "Agent").toUpperCase()}`, L, ry + 72);
-    spacing(ctx, 0);
-    ry += 124;
+    ctx.fillText(ellipsize(ctx, v, colW), L, ry + 86);
   });
 
-  ctx.font = DISPLAY(150);
+  const compY = H - 300 - 124 - 112;
+  if (iy + 300 + 70 < compY) {
+    ctx.font = LABEL(15);
+    spacing(ctx, 4);
+    ctx.fillStyle = MUTED;
+    ctx.fillText("SQUAD COMP", L, compY - 18);
+    spacing(ctx, 0);
+    agents.forEach((agent, i) => {
+      const sx = L + i * 84;
+      const g = ctx.createLinearGradient(sx, compY, sx + 72, compY + 72);
+      g.addColorStop(0, mix(agent?.colors[0] ?? RED, "#ffffff", 0.2));
+      g.addColorStop(1, mix(agent?.colors[0] ?? RED, "#0f1923", 0.5));
+      ctx.fillStyle = g;
+      ctx.fillRect(sx, compY, 72, 72);
+      const icon = roleIcons[i];
+      if (icon) ctx.drawImage(icon, sx + 16, compY + 16, 40, 40);
+    });
+    ctx.font = LABEL(14);
+    spacing(ctx, 3);
+    ctx.fillStyle = INK;
+    ctx.fillText(agents.map((a) => (a?.role ?? "Agent").toUpperCase()).join(" / "), L, compY + 100);
+    spacing(ctx, 0);
+  }
+
+  ctx.font = DISPLAY(124);
   ctx.fillStyle = RED;
-  const by = H - 236;
-  ctx.fillText("THE SPIKE", L - 4, by - 118);
-  ctx.fillText("RUSH.", L - 4, by);
+  ctx.fillText("THE SPIKE", L - 3, H - 300);
+  ctx.fillText("RUSH.", L - 3, H - 194);
 
   ctx.fillStyle = INK;
   ctx.fillRect(L, H - 150, W - L * 2, 3);
@@ -268,6 +264,119 @@ function drawFront(ctx: Ctx, team: PublicTeam, agents: (Agent | undefined)[], fa
   ctx.fillText("TECHSOCI × ALGOZENITH", W - L, H - 104);
   ctx.textAlign = "left";
   spacing(ctx, 0);
+}
+
+function mix(hex: string, to: string, t: number) {
+  const a = parseInt(hex.replace("#", "").slice(0, 6), 16);
+  const b = parseInt(to.replace("#", "").slice(0, 6), 16);
+  const ch = (s: number) => Math.round(((a >> s) & 255) * (1 - t) + ((b >> s) & 255) * t);
+  return `rgb(${ch(16)}, ${ch(8)}, ${ch(0)})`;
+}
+
+function cropMarks(ctx: Ctx, W: number, H: number, color: string) {
+  const i = 26;
+  const s = 30;
+  ctx.strokeStyle = color;
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  for (const [x, y, dx, dy] of [
+    [i, i, 1, 1],
+    [W - i, i, -1, 1],
+    [i, H - i, 1, -1],
+    [W - i, H - i, -1, -1],
+  ]) {
+    ctx.moveTo(x, y + dy * s);
+    ctx.lineTo(x, y);
+    ctx.lineTo(x + dx * s, y);
+  }
+  ctx.stroke();
+}
+
+function drawTile(
+  ctx: Ctx,
+  x: number,
+  y: number,
+  w: number,
+  h: number,
+  i: number,
+  member: PublicTeam["members"][number] | undefined,
+  agent: Agent | undefined,
+  face: HTMLImageElement | null,
+  roleIcon: HTMLImageElement | null,
+) {
+  const base = agent?.colors[0] ?? RED;
+  const cut = 34;
+  ctx.save();
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  ctx.lineTo(x + w - cut, y);
+  ctx.lineTo(x + w, y + cut);
+  ctx.lineTo(x + w, y + h);
+  ctx.lineTo(x + cut, y + h);
+  ctx.lineTo(x, y + h - cut);
+  ctx.closePath();
+  ctx.clip();
+
+  const g = ctx.createLinearGradient(x, y, x + w, y + h);
+  g.addColorStop(0, mix(base, "#ffffff", 0.38));
+  g.addColorStop(0.55, mix(base, "#ffffff", 0.08));
+  g.addColorStop(1, mix(base, "#0f1923", 0.45));
+  ctx.fillStyle = g;
+  ctx.fillRect(x, y, w, h);
+
+  ctx.strokeStyle = "rgba(255,255,255,0.07)";
+  ctx.lineWidth = 10;
+  for (let sx = x - h; sx < x + w; sx += 34) {
+    ctx.beginPath();
+    ctx.moveTo(sx, y + h);
+    ctx.lineTo(sx + h, y);
+    ctx.stroke();
+  }
+
+  ctx.font = DISPLAY(Math.round(h * 0.78));
+  ctx.fillStyle = "rgba(255,255,255,0.16)";
+  ctx.fillText((member?.agent ?? "").toUpperCase(), x + 14, y + h * 0.74);
+
+  if (face) {
+    const size = h * 1.22;
+    ctx.save();
+    ctx.shadowColor = "rgba(15,25,35,0.35)";
+    ctx.shadowBlur = 30;
+    ctx.shadowOffsetX = -10;
+    ctx.drawImage(face, x + w - size * 0.86, y - size * 0.06, size, size);
+    ctx.restore();
+  }
+
+  const scrim = ctx.createLinearGradient(0, y + h - 190, 0, y + h);
+  scrim.addColorStop(0, "rgba(15,25,35,0)");
+  scrim.addColorStop(1, "rgba(15,25,35,0.92)");
+  ctx.fillStyle = scrim;
+  ctx.fillRect(x, y + h - 190, w, 190);
+
+  if (roleIcon) {
+    ctx.globalAlpha = 0.9;
+    ctx.drawImage(roleIcon, x + 22, y + 22, 40, 40);
+    ctx.globalAlpha = 1;
+  }
+  ctx.font = DISPLAY(44);
+  ctx.fillStyle = "rgba(255,255,255,0.9)";
+  ctx.fillText(`0${i + 1}`, x + 74, y + 60);
+
+  const tx = x + 26;
+  ctx.font = LABEL(15);
+  spacing(ctx, 4);
+  ctx.fillStyle = "rgba(236,232,225,0.72)";
+  ctx.fillText((member?.role ?? "").toUpperCase(), tx, y + h - 98);
+  spacing(ctx, 0);
+  ctx.font = BODY(34, 600);
+  ctx.fillStyle = CREAM;
+  ctx.fillText(ellipsize(ctx, member?.name ?? "", w - 52), tx, y + h - 58);
+  ctx.font = LABEL(16);
+  spacing(ctx, 4);
+  ctx.fillStyle = "#ff6b77";
+  ctx.fillText(`${(member?.agent ?? "").toUpperCase()} — ${(agent?.role ?? "Agent").toUpperCase()}`, tx, y + h - 26);
+  spacing(ctx, 0);
+  ctx.restore();
 }
 
 function barcode(ctx: Ctx, seed: string, x: number, y: number, w: number, h: number) {
@@ -354,7 +463,7 @@ function drawBack(
     const ry = y + 26 + i * row;
     const s = 112;
     const g = ctx.createLinearGradient(L, ry, L + s, ry + s);
-    g.addColorStop(0, agent?.colors[0] ?? RED);
+    g.addColorStop(0, mix(agent?.colors[0] ?? RED, "#ffffff", 0.3));
     g.addColorStop(1, agent?.colors[1] ?? INK_2);
     ctx.fillStyle = g;
     ctx.fillRect(L, ry, s, s);
@@ -411,6 +520,8 @@ function drawBack(
   ctx.fillStyle = MUTED;
   ctx.fillText(ellipsize(ctx, `${host}/team/${team.slug}`.toUpperCase(), 640), L, bcY + 110);
   spacing(ctx, 0);
+  stamp(ctx, 800, H - 205, passNo(team));
+  cropMarks(ctx, W, H, "rgba(236,232,225,0.3)");
   ctx.save();
   ctx.translate(W - 64, H - 64);
   ctx.fillStyle = INK;
@@ -420,20 +531,47 @@ function drawBack(
   ctx.restore();
 }
 
+function stamp(ctx: Ctx, cx: number, cy: number, label: string) {
+  ctx.save();
+  ctx.translate(cx, cy);
+  ctx.rotate(-0.24);
+  ctx.globalAlpha = 0.9;
+  ctx.strokeStyle = RED;
+  ctx.lineWidth = 5;
+  ctx.beginPath();
+  ctx.arc(0, 0, 84, 0, Math.PI * 2);
+  ctx.stroke();
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.arc(0, 0, 70, 0, Math.PI * 2);
+  ctx.stroke();
+  ctx.fillStyle = RED;
+  ctx.textAlign = "center";
+  ctx.font = DISPLAY(46);
+  ctx.fillText("LOCKED IN", 0, 10);
+  ctx.font = LABEL(13);
+  spacing(ctx, 3);
+  ctx.fillText(label, 0, 38);
+  ctx.fillText("CZ 3.0", 0, -30);
+  spacing(ctx, 0);
+  ctx.restore();
+}
+
 function blit(atlas: Ctx, face: HTMLCanvasElement, rect: { x: number; y: number; w: number; h: number }) {
   atlas.drawImage(face, rect.x * ATLAS, rect.y * ATLAS, rect.w * ATLAS, rect.h * ATLAS);
 }
 
 export async function drawCardAtlas(team: PublicTeam, host = window.location.host): Promise<HTMLCanvasElement> {
   const agents = team.members.map((m) => AGENT_BY_NAME.get(m.agent));
-  const [, ...imgs] = await Promise.all([
+  const load = (src?: string) => (src ? loadImage(src) : Promise.resolve(null));
+  const [, icons, roleIcons] = await Promise.all([
     loadFonts(),
-    ...agents.map((a) => (a ? loadImage(a.icon) : Promise.resolve(null))),
+    Promise.all(agents.map((a) => load(a?.icon))),
+    Promise.all(agents.map((a) => load(a?.roleIcon))),
   ]);
-  const icons = imgs as (HTMLImageElement | null)[];
 
   const front = canvas(FACE_W, FACE_H);
-  drawFront(front.getContext("2d")!, team, agents, icons);
+  drawFront(front.getContext("2d")!, team, agents, icons, roleIcons);
   const back = canvas(FACE_W, FACE_H);
   drawBack(back.getContext("2d")!, team, agents, icons, host);
 
