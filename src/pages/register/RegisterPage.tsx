@@ -3,6 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm, type FieldErrors } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { toast } from "sonner";
+import { slugify } from "../../lib/slug";
+import { API_URL, UNSTOP_URL, clearSavedTeam, getSavedTeam, saveTeam } from "../../lib/team";
 import { SpikeGlyph, beep } from "../landing/SpikeButton";
 import { AGENTS, AGENT_BY_NAME, ROLES, ROLE_ICON, VALORANT_CHARACTERS, type Agent } from "./agents";
 import imgRaze from "../../assets/valorant/raze.png";
@@ -23,7 +26,12 @@ const memberSchema = z.object({
 
 const formSchema = z
   .object({
-    teamName: z.string().trim().min(3, "Min 3 characters").max(30, "Max 30 characters"),
+    teamName: z
+      .string()
+      .trim()
+      .min(3, "Min 3 characters")
+      .max(30, "Max 30 characters")
+      .refine((name) => slugify(name).length > 0, "Use letters or numbers"),
     leader: memberSchema,
     member2: memberSchema,
     member3: memberSchema,
@@ -46,7 +54,6 @@ const SLOTS: { key: SlotKey; label: string; short: string }[] = [
   { key: "member3", label: "Member 3", short: "M3" },
 ];
 
-const API_URL = import.meta.env.VITE_API_URL || "";
 const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID || "";
 const MUTE_KEY = "cz-register-muted";
 
@@ -129,7 +136,7 @@ const ReplayIcon = () => (
 );
 
 // ── Sign-in screen ───────────────────────────────────────────────────────────
-function SignIn({ gsiReady, error }: { gsiReady: boolean; error: string }) {
+function SignIn({ gsiReady, checking, error }: { gsiReady: boolean; checking: boolean; error: string }) {
   return (
     <div className="lp rg">
       <div className="rg-auth">
@@ -153,11 +160,19 @@ function SignIn({ gsiReady, error }: { gsiReady: boolean; error: string }) {
             <div className="rg-auth__notice">
               <i>!</i> Only the team leader fills this form
             </div>
+            <div className="rg-unstop">
+              <b>Register on Unstop first.</b> Your team name here <em>must</em> be exactly the same as your team name on
+              Unstop. Haven't registered there yet?{" "}
+              <a href={UNSTOP_URL} target="_blank" rel="noreferrer">
+                Register on Unstop ↗
+              </a>
+            </div>
 
             <div className="rg-gsi">
               {/* GSI sizes its iframe from the container, so it must not be display:none when rendered. */}
               <div id="google-signin-btn" />
               {!gsiReady && <span className="rg-gsi__loading">Connecting to Google</span>}
+              {checking && <span className="rg-gsi__loading">Checking your registration</span>}
             </div>
             {error && <div className="rg-error">{error}</div>}
 
@@ -238,6 +253,7 @@ export default function RegisterPage() {
   const [serverError, setServerError] = useState("");
   const [phase, setPhase] = useState<"form" | "submitting" | "locked">("form");
   const [gsiReady, setGsiReady] = useState(false);
+  const [checking, setChecking] = useState(false);
   const [active, setActive] = useState<SlotKey>("leader");
   const [locked, setLocked] = useState<Record<SlotKey, boolean>>({ leader: false, member2: false, member3: false });
   const [justLocked, setJustLocked] = useState<SlotKey | null>(null);
@@ -275,25 +291,65 @@ export default function RegisterPage() {
 
   // ── Google Sign-In ───────────────────────────────────────────────────────
   const handleCredentialResponse = useCallback(
-    (response: { credential: string }) => {
+    async (response: { credential: string }, skipCheck = false) => {
       setServerError("");
+      let info: User;
       try {
         const payload = JSON.parse(atob(response.credential.split(".")[1].replace(/-/g, "+").replace(/_/g, "/")));
-        const info = { email: payload.email || "", name: payload.name || "", picture: payload.picture || "", credential: response.credential };
-        setUser(info);
-        setValue("leader.name", info.name);
-        setValue("leader.email", info.email);
+        info = { email: payload.email || "", name: payload.name || "", picture: payload.picture || "", credential: response.credential };
       } catch {
         setServerError("Failed to process Google sign-in. Please try again.");
+        return;
       }
+      if (!skipCheck) {
+        setChecking(true);
+        try {
+          const res = await fetch(`${API_URL}/api/register/check`, { headers: { Authorization: `Bearer ${info.credential}` } });
+          const body = res.ok ? await res.json() : null;
+          if (body?.registered && body.team?.slug) {
+            saveTeam(body.team);
+            toast("You've already registered", {
+              id: "already-registered",
+              description: `${info.email} is on team ${body.team.teamName}. Here's your team pass.`,
+            });
+            navigate(`/team/${body.team.slug}`, { replace: true });
+            return;
+          }
+        } catch {
+          // Check is best-effort; POST /api/register still rejects duplicates.
+        } finally {
+          setChecking(false);
+        }
+      }
+      setUser(info);
+      setValue("leader.name", info.name);
+      setValue("leader.email", info.email);
     },
-    [setValue]
+    [setValue, navigate]
   );
+
+  useEffect(() => {
+    if (import.meta.env.DEV && new URLSearchParams(location.search).has("preview")) return;
+    const saved = getSavedTeam();
+    if (!saved) return;
+    toast("You've already registered", {
+      id: "already-registered",
+      description: `Team ${saved.teamName} is registered on this device.`,
+      action: {
+        label: "Not my team",
+        onClick: () => {
+          clearSavedTeam();
+          window.location.assign("/register");
+        },
+      },
+    });
+    navigate(`/team/${saved.slug}`, { replace: true });
+  }, [navigate]);
 
   useEffect(() => {
     if (user) return;
     if (import.meta.env.DEV && new URLSearchParams(location.search).has("preview")) {
-      handleCredentialResponse({ credential: `x.${btoa(JSON.stringify({ email: "leader@iiitsonepat.ac.in", name: "Preview Leader" }))}.x` });
+      handleCredentialResponse({ credential: `x.${btoa(JSON.stringify({ email: "leader@iiitsonepat.ac.in", name: "Preview Leader" }))}.x` }, true);
       return;
     }
     const initGsi = () => {
@@ -377,25 +433,12 @@ export default function RegisterPage() {
         setPhase("form");
         return;
       }
+      const team = { slug: body.team?.slug || slugify(data.teamName), teamName: data.teamName };
+      saveTeam(team);
       setPhase("locked");
       beep(520, 0.12, 0.06);
       setTimeout(() => beep(780, 0.4, 0.06), 120);
-      setTimeout(
-        () =>
-          navigate("/thank-you", {
-            state: {
-              teamName: data.teamName,
-              leaderName: data.leader.name,
-              leaderEmail: data.leader.email,
-              member2Name: data.member2.name,
-              member3Name: data.member3.name,
-              leaderAgent: data.leader.valorantCharacter,
-              member2Agent: data.member2.valorantCharacter,
-              member3Agent: data.member3.valorantCharacter,
-            },
-          }),
-        2200
-      );
+      setTimeout(() => navigate(`/team/${team.slug}`, { replace: true, state: { fresh: true } }), 2200);
     } catch (err) {
       console.error(err);
       setServerError("Network error. Check your connection and try again.");
@@ -405,7 +448,7 @@ export default function RegisterPage() {
 
   const visibleAgents = useMemo(() => (role === "All" ? AGENTS : AGENTS.filter((a) => a.role === role)), [role]);
 
-  if (!user) return <SignIn gsiReady={gsiReady} error={serverError} />;
+  if (!user) return <SignIn gsiReady={gsiReady} checking={checking} error={serverError} />;
 
   const e = errors[active];
   const memberError = e?.name || e?.email || e?.mobile || e?.valorantCharacter;
@@ -461,6 +504,15 @@ export default function RegisterPage() {
           </label>
           <p className="rg-squadname__meta">
             Registering as <b>{user.email}</b>. Pick an agent and lock in each of your 3 members.
+          </p>
+          <p className="rg-squadname__unstop">
+            <i>!</i>
+            <span>
+              Team name <b>must match your Unstop team name exactly</b>. Not on Unstop yet?{" "}
+              <a href={UNSTOP_URL} target="_blank" rel="noreferrer">
+                Register there first ↗
+              </a>
+            </span>
           </p>
         </div>
 
