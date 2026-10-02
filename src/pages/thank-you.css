@@ -1,0 +1,39 @@
+.ty { position: relative; min-height: 100svh; isolation: isolate; overflow: hidden; }
+.ty__video { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.ty::before { content: ""; position: fixed; inset: 0; z-index: -1; background: radial-gradient(circle at 50% 30%, rgba(15, 25, 35, 0.4), rgba(15, 25, 35, 0.95) 70%); }
+.ty__bar { padding: 20px var(--pad); }
+.ty__main { max-width: 1100px; margin: 0 auto; padding: 24px var(--pad) 80px; text-align: center; }
+.ty__eyebrow { color: #4fe3c1; }
+.ty__title { font-size: clamp(100px, 15vw, 230px); margin-top: 10px; animation: ty-slam 0.6s cubic-bezier(0.2, 1.4, 0.4, 1) both; }
+.ty__title span { color: var(--red); }
+@keyframes ty-slam { from { opacity: 0; transform: scale(1.5); } }
+.ty__lead { max-width: 620px; margin: 18px auto 0; font-size: 17px; line-height: 1.6; opacity: 0.85; }
+.ty__lead b { color: var(--cream); font-weight: 600; }
+.ty__team-label { margin-top: 48px; color: var(--muted); }
+.ty__team { font-size: clamp(56px, 7vw, 96px); margin-top: 8px; }
+.ty__squad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+.ty__card {
+  --c1: #ff4655;
+  --c2: #1f2d3a;
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(170deg, color-mix(in srgb, var(--c1) 80%, #000), var(--c2) 75%);
+  clip-path: var(--cut);
+  text-align: left;
+  animation: ty-rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(var(--d, 0ms) + 300ms);
+}
+@keyframes ty-rise { from { opacity: 0; transform: translateY(50px); } }
+.ty__portrait { position: absolute; left: 50%; bottom: -14%; height: 120%; width: auto; max-width: none; transform: translateX(-50%); z-index: -1; filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5)); }
+.ty__meta { position: absolute; left: 0; right: 0; bottom: 0; padding: 60px 20px 18px; background: linear-gradient(0deg, var(--ink) 35%, transparent); display: flex; flex-direction: column; gap: 6px; }
+.ty__meta .lp-label { color: var(--muted); font-size: 10px; }
+.ty__meta b { font-family: var(--display); font-size: 40px; line-height: 0.95; text-transform: uppercase; font-weight: 700; }
+.ty__agent { display: inline-flex; align-items: center; gap: 8px; font-family: var(--label); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); }
+.ty__agent img { width: 14px; height: 14px; }
+.ty__home { margin-top: 40px; }
+@media (max-width: 760px) {
+  .ty__squad { grid-template-columns: 1fr; }
+  .ty__card { height: 320px; }
+}
